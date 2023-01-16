@@ -233,9 +233,9 @@ requests==2.28.1
 requests-file==1.5.1
 rope==0.22.0
 Rtree==0.9.7
-ruamel.yaml==0.16.12
-ruamel.yaml.clib==0.2.6
-ruamel-yaml-conda==0.15.100
+#ruamel.yaml==0.16.12
+#ruamel.yaml.clib==0.2.6
+#ruamel-yaml-conda==0.15.100
 s3transfer==0.6.0
 scikit-image==0.19.2
 scikit-learn==1.0.2
