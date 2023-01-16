@@ -268,7 +268,7 @@ statsmodels==0.13.2
 sympy==1.10.1
 tables==3.6.1
 tabulate==0.8.10
-TBB==0.2
+#TBB==0.2
 tblib==1.7.0
 tenacity==8.0.1
 terminado==0.13.1
@@ -301,9 +301,9 @@ websocket-client==0.58.0
 Werkzeug==2.0.3
 wheel==0.37.1
 widgetsnbextension==3.5.2
-win-inet-pton==1.1.0
-win-unicode-console==0.5
-wincertstore==0.2
+#win-inet-pton==1.1.0
+#win-unicode-console==0.5
+#wincertstore==0.2
 wrapt==1.14.1
 xarray==0.20.1
 xlrd==2.0.1
