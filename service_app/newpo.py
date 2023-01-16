@@ -27,7 +27,8 @@ def newpo():
                 st.warning('ต้องอัพโหลไฟล์ก่อน หรือเลขที่ PO ไม่ระบุ')
             else:
                 PoNo = PoNo.upper().replace("/","-")
-                parent_path = pathlib.Path(__file__).parent.parent.resolve()
+                #parent_path = pathlib.Path(__file__).parent.parent.resolve()
+                parent_path = (r"/app/poDocuments/")
                 data_path = os.path.join(parent_path, "data")
                 new_folder = os.path.join(data_path,PoNo)  
                 os.mkdir(new_folder)         
