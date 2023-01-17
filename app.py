@@ -108,7 +108,9 @@ def side_menu():
             #os.mkdir("//192.168.1.16/po-documents/data/PO123")
             btn_dir = st.form_submit_button("OK",)                               
             if btn_dir:
+                st.write(os.path.join(in_dir))
                 os.mkdir(in_dir)
+                st.info("Create Done.")
         
     if selected == "Logout":
         with st.form("logout_form"):
