@@ -103,7 +103,7 @@ def side_menu():
             #show_pdf("data/PO6510-035/Test_1.pdf")
             #st.write(os.listdir('//192.168.1.16/po-documents'))
             #os.mkdir("//192.168.1.16/po-documents/data/PO123")
-            in_dir = st.text_input("Directory :",value="//192.168.1.16/po-documents/data/PO123")
+            in_dir = st.text_input("Directory :",value="\\192.168.1.16\po-documents\data\PO123")
             #show_pdf("data/PO6510-035/Test_1.pdf")
             #os.mkdir("//192.168.1.16/po-documents/data/PO123")
             btn_dir = st.form_submit_button("OK",)                               
