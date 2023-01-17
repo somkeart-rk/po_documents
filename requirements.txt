@@ -37,6 +37,7 @@ pipenv==2022.10.12
 platformdirs==2.5.2
 protobuf==3.20.3
 pyarrow==9.0.0
+pybase64==1.2.3
 pycparser==2.21
 pydeck==0.8.0b4
 Pygments==2.13.0
