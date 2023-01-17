@@ -34,6 +34,7 @@ def newpo():
                 #parent_path = (r"D:\Temp")
                 data_path = os.path.join(parent_path, "data")
                 new_folder = os.path.join(data_path,PoNo)  
+                st.write(new_folder)
                 os.mkdir(new_folder)         
                 save_path = os.path.join(new_folder)
                 for uploaded_file in uploaded_files:
