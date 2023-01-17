@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import include.db as db
 import time
+import urllib
 import pathlib
 import os.path 
 import base64
@@ -29,7 +30,7 @@ def newpo():
                 PoNo = PoNo.upper().replace("/","-")
                 #parent_path = pathlib.Path(__file__).parent.parent.resolve()
                 #Upload on server
-                parent_path = ("file://192.168.1.16/po-documents")
+                parent_path = ("smb://192.168.1.16/po-documents")
                 #Upload on local
                 #parent_path = (r"D:\Temp")
                 data_path = os.path.join(parent_path, "data")
