@@ -28,7 +28,10 @@ def newpo():
             else:
                 PoNo = PoNo.upper().replace("/","-")
                 #parent_path = pathlib.Path(__file__).parent.parent.resolve()
-                parent_path = (r"/app/poDocuments/")
+                #Upload on server
+                parent_path = (r"/app/poDocuments")
+                #Upload on local
+                #parent_path = (r"D:\Temp")
                 data_path = os.path.join(parent_path, "data")
                 new_folder = os.path.join(data_path,PoNo)  
                 os.mkdir(new_folder)         
