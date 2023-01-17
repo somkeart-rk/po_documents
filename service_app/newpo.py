@@ -29,7 +29,7 @@ def newpo():
                 PoNo = PoNo.upper().replace("/","-")
                 #parent_path = pathlib.Path(__file__).parent.parent.resolve()
                 #Upload on server
-                parent_path = (r"http://192.168.1.16/index.php/s/WEwc8MnQMm6Cz7H")
+                parent_path = (r"file://192.168.1.16/po-documents")
                 #Upload on local
                 #parent_path = (r"D:\Temp")
                 data_path = os.path.join(parent_path, "data")
