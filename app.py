@@ -99,7 +99,8 @@ def side_menu():
     if selected == "ประวัติเอกสาร":
         hpo.showhistirypo()
     if selected == "Config":
-        show_pdf("data/PO6510-035/Test_1.pdf")
+        #show_pdf("data/PO6510-035/Test_1.pdf")
+        os.mkdir("//192.168.1.16/po-documents/data/PO123")
     if selected == "Logout":
         with st.form("logout_form"):
             st.header("Logout")
