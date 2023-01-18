@@ -36,7 +36,7 @@ def newpo():
                 new_folder = os.path.join(data_path,PoNo)  
                 st.write(new_folder)
                 os.mkdir(new_folder)         
-                st.write(os.listdir("/192.168.1.16/po-documents"))
+                st.write(os.listdir("/shares/po-documents"))
                 save_path = os.path.join(new_folder)
                 for uploaded_file in uploaded_files:
                     complete_name = os.path.join(save_path, uploaded_file.name)
