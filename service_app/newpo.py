@@ -11,7 +11,7 @@ def newpo():
     with st.form("new_form"):
         st.header("เอกสารใหม่")
         col1,col2,col3 = st.columns(3)
-        Department = col1.selectbox("หน่วยงาน",db.load_department())
+        Department = col1.selectbox("หน่วยงาน",db.load_department("N"))
         PoNo = col2.text_input("เลขที่ PO")
         priority = col3.selectbox("ความเร่งด่วนของงาน",["1-LOW","2-MEDIUM","3-HIGH"])
         PoDescription = st.text_area("รายละเอียดการสั่งซื้อ",max_chars=1000)
