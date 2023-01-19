@@ -29,14 +29,16 @@ def newpo():
                 PoNo = PoNo.upper().replace("/","-")
                 #parent_path = pathlib.Path(__file__).parent.parent.resolve()
                 #Upload on server
-                parent_path = (r"/app/poDocuments")
+                parent_path = (r"/opt/poDocuments")
+                if not os.path.isdir(parent_path):
+                    os.mkdir(parent_path)
                 #Upload on local
                 #parent_path = (r"D:\Temp")
                 data_path = os.path.join(parent_path, "data")
                 new_folder = os.path.join(data_path,PoNo)  
-                st.write(new_folder)
+                #st.write(new_folder)
                 os.mkdir(new_folder)         
-                #st.write(os.listdir("/app/poDocuments"))
+                #st.write(os.listdir("/opt/poDocuments"))
                 save_path = os.path.join(new_folder)
                 for uploaded_file in uploaded_files:
                     complete_name = os.path.join(save_path, uploaded_file.name)
