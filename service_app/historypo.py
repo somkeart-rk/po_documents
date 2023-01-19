@@ -12,8 +12,8 @@ import include.export_tools as exp
 def load_data(startDate,finishDate,department,po_no):
     sql = "select t0.po_number,t0.department_name,t0.po_desc,t0.create_time "
     sql += " from po_documents.tbl_po_data t0 "
-    sql += " where t0.read_state = 1 "
-    if department != 'All':
+    sql += " where t0.read_state >= 0 "
+    if department != 'ทั้งหมด':
         sql += f" and t0.department_name='{department}' "
     if po_no:
         sql += f" and t0.po_number='{po_no}' "
@@ -50,5 +50,7 @@ def showhistirypo():
 
 
 
+
+    
 
     
