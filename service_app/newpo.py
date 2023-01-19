@@ -30,14 +30,14 @@ def newpo():
                 #parent_path = pathlib.Path(__file__).parent.parent.resolve()
                 #Upload on server
                 parent_path = (r"/opt/poDocuments")
-                if not os.path.isdir(parent_path):
-                    os.mkdir(parent_path)
                 #Upload on local
                 #parent_path = (r"D:\Temp")
+                if not os.path.exists(parent_path):
+                    os.makedirs(parent_path)
                 data_path = os.path.join(parent_path, "data")
                 new_folder = os.path.join(data_path,PoNo)  
                 #st.write(new_folder)
-                os.mkdir(new_folder)         
+                os.makedirs(new_folder)         
                 #st.write(os.listdir("/opt/poDocuments"))
                 save_path = os.path.join(new_folder)
                 for uploaded_file in uploaded_files:
