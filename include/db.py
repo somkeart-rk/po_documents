@@ -49,7 +49,7 @@ def update_running(systemName,machineType):
         conn.close()
 
 #load department data list for selectBox
-def load_department():
+def load_department(no_all):
     sql = "select distinct t0.department_name from po_documents.tbl_department t0 "
     if no_all == "Y":
         sql += " where t0.department_id > 1 "
