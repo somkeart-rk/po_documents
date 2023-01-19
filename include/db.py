@@ -48,10 +48,10 @@ def update_running(systemName,machineType):
     finally:
         conn.close()
 
-#load machine type data list for selectBox
+#load department data list for selectBox
 def load_department():
     sql = "select distinct t0.department_name from po_documents.tbl_department t0 "
-    sql += " order by t0.department_id "
+    sql += " where t0.department_id > 0 order by t0.department_id "
     rows = run_query(sql)
     return pd.DataFrame(rows)
 
