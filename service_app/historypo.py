@@ -31,7 +31,7 @@ def showhistirypo():
 
         st_d = col1.date_input("วันที่เริ่ม")
         fn_d = col2.date_input("วันสุดท้าย")
-        department = col3.selectbox("หน่วยงาน",db.load_department("Y"))
+        department = col3.selectbox("หน่วยงาน",db.load_department("N"))
         po_no = col4.text_input("เลขที่ PO")
 
         if col5.button("ค้นหา"):
