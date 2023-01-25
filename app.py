@@ -11,7 +11,6 @@ import time
 import pathlib
 import os
 import os.path 
-import sys
 import base64
 
 def show_pdf(file_path):
@@ -66,7 +65,7 @@ if not st.session_state["login"]:
                     for row in rows:
                         #st.write(f"{row[0]} has a :{row[1]}:")
                         st.session_state.fullName = row[1]
-                    st.session_state.OsName = os.name  # sys.plateform
+                    st.session_state.OsName = os.name 
                     st.experimental_rerun()
                 else:
                     st.info("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง")
