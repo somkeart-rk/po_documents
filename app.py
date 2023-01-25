@@ -9,7 +9,9 @@ import service_app.showpo as spo
 import service_app.historypo as hpo
 import time
 import pathlib
+import os
 import os.path 
+import sys
 import base64
 
 def show_pdf(file_path):
@@ -24,6 +26,7 @@ if "login" not in st.session_state:
     st.session_state["login"] = False
     st.session_state.userName = ""
     st.session_state.fullName = ""
+    st.session_state.OsName = ""
 
 def add_logo(logo_path, width, height):
     """Read and return a resized logo"""
@@ -63,6 +66,7 @@ if not st.session_state["login"]:
                     for row in rows:
                         #st.write(f"{row[0]} has a :{row[1]}:")
                         st.session_state.fullName = row[1]
+                    st.session_state.OsName = sys.plateform
                     st.experimental_rerun()
                 else:
                     st.info("ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง")
@@ -90,6 +94,7 @@ def side_menu():
         if "login" in st.session_state:
             st.write('รหัสพนักงาน : ',st.session_state["userName"] )
             st.write('ชื่อพนักงาน  : ',st.session_state["fullName"] )
+            st.write('Operate  : ',st.session_state["OsName"] )
 
     if selected == "เอกสารใหม่":
         npo.newpo()
