@@ -97,12 +97,12 @@ def sentEmailWithAtth(po_number,department,mail_details):
     email_from = 'somkeart@thaisock.com'
     password = 'gk5Wb3PjTFh4'
     if st.session_state["userName"] == 'OST14011':
-        email_from = 'somkeart@thaisock.com'
-        password = 'gk5Wb3PjTFh4'
+        email_from = 'purchase2@thaisock.com'
+        password = 'brwe5V4v2J9L'
 
-    if st.session_state["userName"] == 'OST21005':
-        email_from = 'somkeart@thaisock.com'
-        password = 'gk5Wb3PjTFh4'
+    #if st.session_state["userName"] == 'OST21005':
+    #    email_from = 'purchase_am@thaisock.com'
+    #    password = 'gk5Wb3PjTFh4'
 
     email_to = ['somkeart@thaisock.com','purchase_manager@thaisock.com']
 
