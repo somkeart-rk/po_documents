@@ -1,10 +1,12 @@
 import streamlit as st
 import pandas as pd
 import include.db as db
+import include.sendmail as sent_mail
 import time
 import pathlib
 import os.path 
 import base64
+import smtplib, ssl
 
 
 def newpo():
@@ -17,7 +19,7 @@ def newpo():
         PoDescription = st.text_area("รายละเอียดการสั่งซื้อ",max_chars=1000)
     
         uploaded_files = st.file_uploader("เลือกไฟล์ PDF ที่่ต้องการอัพโหลด",type=["pdf"],accept_multiple_files=True)
-        
+        st.info("ตรวจสอบข้อมูลให้ถูกต้องก่อนกดบันทึกเอกสาร")
         submitted = st.form_submit_button("บันทึกเอกสาร")
         if submitted:
             loginName= st.session_state["userName"]
@@ -60,7 +62,10 @@ def newpo():
 
                 #save data into database
                 #st.info(f"Job No# : {jobRunning} has been created.")
-                st.success("อัพโหลดเสร็จเรียบร้อย")
+                
+                sent_mail.sentEmailWithAtth({PoNo},{Department} ,{PoDescription} )
+                
+                st.success("อัพโหลดและส่งเมล์เสร็จเรียบร้อย")
 
 def Closejob(po_No):
     CloseJob_form = st.container() #st.form(key="Close Job")
