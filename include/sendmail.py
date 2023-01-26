@@ -58,7 +58,8 @@ def sentEmailWithAtth(po_number,department,mail_details):
         <html>
             <body>
                 <p>เรียน คุณอลิศรา </p>
-                <p>    ทางจัดซื้อได้มีขอสั่งซื้อสินค้าในระบบ ERP และ {mail_details} </p>
+                <p>    {department} มีการขอซื้อสินค้าและฝ่ายจัดซื้อได้มีการขอราคาจากผู้ขาย จึงได้ส่งเอกสารให้พิจารณาเพื่ออนุมัติและดำเนินการต่อ <p>
+                <p>หมายเหตุ {mail_details} </p>
                 <img src='cid:myimageid' width="700">
             </body>
         </html>
@@ -95,7 +96,15 @@ def sentEmailWithAtth(po_number,department,mail_details):
     #zoho mail
     email_from = 'somkeart@thaisock.com'
     password = 'gk5Wb3PjTFh4'
-    email_to = ['somkeart@gmail.com','somkeart@thaisock.com']
+    if st.session_state["userName"] == 'OST14011':
+        email_from = 'somkeart@thaisock.com'
+        password = 'gk5Wb3PjTFh4'
+
+    if st.session_state["userName"] == 'OST21005':
+        email_from = 'somkeart@thaisock.com'
+        password = 'gk5Wb3PjTFh4'
+
+    email_to = ['somkeart@thaisock.com','purchase_manager@thaisock.com']
 
     # Generate today's date to be included in the email Subject
     date_str = pd.Timestamp.today().strftime('%Y-%m-%d')
@@ -135,6 +144,9 @@ def sentEmailWithAtth(po_number,department,mail_details):
     with smtplib.SMTP_SSL("smtppro.zoho.com", 465, context=context) as server:
         server.login(email_from, password)
         server.sendmail(email_from, email_to, email_string) 
+
+
+
 
 
 
