@@ -48,8 +48,9 @@ def update_running(systemName,machineType):
     finally:
         conn.close()
 
-#load department data list for selectBox
+#load machine type data list for selectBox
 def load_department(no_all):
+    #no_all = Y Show,N = Unshow
     sql = "select distinct t0.department_name from po_documents.tbl_department t0 "
     if no_all == "Y":
         sql += " where t0.department_id > 1 "
@@ -70,3 +71,12 @@ def load_po_file():
     sql += " order by t0.file_id "
     rows = run_query(sql)
     return pd.DataFrame(rows)
+
+#load po file data list for sent mail
+def get_po_file_name(po_number):
+    sql = "select distinct t0.file_id, t0.po_number, t0.file_location from po_documents.tbl_po_file t0 "
+    sql += f" where t0.po_number = '{po_number}' "
+    sql += " order by t0.file_id "
+    rows = run_query(sql)
+    #st.write(rows)
+    return rows
