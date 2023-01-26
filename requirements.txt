@@ -20,7 +20,7 @@ gitdb==4.0.9
 GitPython==3.1.29
 htbuilder==0.6.1
 idna==3.4
-imapclient-2.3.1
+#imapclient-2.3.1
 importlib-metadata==5.0.0
 Jinja2==3.1.2
 jsonschema==4.16.0
