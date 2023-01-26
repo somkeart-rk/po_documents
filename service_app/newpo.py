@@ -63,7 +63,7 @@ def newpo():
                 #save data into database
                 #st.info(f"Job No# : {jobRunning} has been created.")
                 
-                sent_mail.sentEmailWithAtth({PoNo},{Department} ,{PoDescription} )
+                sent_mail.sentEmailWithAtth(PoNo,Department ,PoDescription )
                 
                 st.success("อัพโหลดและส่งเมล์เสร็จเรียบร้อย")
 
