@@ -7,11 +7,13 @@ import include.db as db
 import service_app.newpo as npo
 import service_app.showpo as spo
 import service_app.historypo as hpo
+import include.sendmail as sent_mail
 import time
 import pathlib
-import os
 import os.path 
+import os
 import base64
+import smtplib, ssl
 
 def show_pdf(file_path):
     with open(file_path,"rb") as f:
@@ -104,17 +106,17 @@ def side_menu():
         hpo.showhistirypo()
     if selected == "Config":
         with st.form("Test"):
-            #show_pdf("data/PO6510-035/Test_1.pdf")
-            #st.write(os.listdir('//192.168.1.16/po-documents'))
-            #os.mkdir("//192.168.1.16/po-documents/data/PO123")
+            SentMail = st.form_submit_button("Click to sent mail.")
+            if SentMail:
+                #sent_mail.sendEmail("PO")
+                sent_mail.sentEmailWithAtth("PO6510-036","IT","test po")
+                st.info("Sent success.")
+
             in_dir = st.text_input("Directory :",value="/app/poDocuments/data/PO123")
-            #show_pdf("data/PO6510-035/Test_1.pdf")
-            #os.mkdir("//192.168.1.16/po-documents/data/PO123")
             btn_dir = st.form_submit_button("OK",)                               
             if btn_dir:
                 st.write(os.path.join(in_dir))
                 os.mkdir(in_dir)
-                #os.makedirs(in_dir)
                 st.info("Create Done.")
         
     if selected == "Logout":
