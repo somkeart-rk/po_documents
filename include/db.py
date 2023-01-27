@@ -80,3 +80,21 @@ def get_po_file_name(po_number):
     rows = run_query(sql)
     #st.write(rows)
     return rows
+
+#load email data for sent mail tag FROM
+def get_email_from(user_id):
+    sql = "select distinct t0.email, t0.email_password from po_documents.tbl_po_email t0 "
+    sql += f" where t0.email_type = 'FROM' and t0.active = 'Y' and t0.user_id = '{user_id}' "
+    rows = run_query(sql)
+    #st.write(rows)
+    return rows
+
+#load email data for sent mail tag TO
+def get_email_to():
+    sql = "select distinct group_concat(t0.email) email from po_documents.tbl_po_email t0 "
+    sql += f" where t0.email_type = 'TO' and t0.active = 'Y'  "
+    sql += " order by t0.email_id "
+    rows = run_query(sql)
+    #st.write(rows)
+    return rows
+
