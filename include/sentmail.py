@@ -29,14 +29,14 @@ def sendEmail(user_id):
     mailfrom = db.get_email_from(user_id)
     rows = pd.DataFrame(mailfrom,columns=['email','email_password'])
     for x, email in enumerate(rows['email']):
-        email_from = rows['email'][x]  #'somkeart@gmail.com'
-        password = rows['email_password'][x]    #'lpwuvtybjfshgzck'
+        email_from = rows['email'][x]  
+        password = rows['email_password'][x]   
         #st.write(email_from,' : ',password)
 
     mailto = db.get_email_to()
     rows = pd.DataFrame(mailto,columns=['email'])
     for x, email in enumerate(rows['email']):
-        email_to = rows['email'][x]  #'somkeart@thaisock.com'
+        email_to = rows['email'][x] 
 
     email_to = email_to.split(',')
     #st.write(email_to)
