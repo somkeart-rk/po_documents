@@ -24,9 +24,9 @@ def sendEmail(mailType ):
         '''
 
     # Set up the email addresses and password. Please replace below with your email address and password
-    email_from = 'somkeart@gmail.com'
+    email_from = 'xxxxx@gmail.com'
     password = 'lpwuvtybjfshgzck'
-    email_to = 'somkeart@thaisock.com'
+    email_to = 'xxxxxx@gmail.com'
 
     # Generate today's date to be included in the email Subject
     date_str = pd.Timestamp.today().strftime('%Y-%m-%d')
@@ -92,18 +92,17 @@ def sentEmailWithAtth(po_number,department,mail_details):
 
     # Set up the email addresses and password. Please replace below with your email address and password
     #zoho mail
-    email_from = 'somkeart@thaisock.com'
+    email_from = 'xxxxx@thaisock.com'
     password = 'gk5Wb3PjTFh4'
     if st.session_state["userName"] == 'OST14011':
-        email_from = 'purchase2@thaisock.com'
+        email_from = 'xxxxx@thaisock.com'
         password = 'brwe5V4v2J9L'
 
     if st.session_state["userName"] == 'OST21005':
-        email_from = 'purchase_am@thaisock.com'
+        email_from = 'xxxxx@thaisock.com'
         password = 'GxSd4XBkvxeK'
 
-    email_to = ['alisara@thaisock.com','purchase_manager@thaisock.com']
-    #email_to = ['somkeart@thaisock.com','purchase_manager@thaisock.com']
+    email_to = ['xxxx@thaisock.com','xxxx@thaisock.com']
 
     # Generate today's date to be included in the email Subject
     date_str = pd.Timestamp.today().strftime('%Y-%m-%d')
