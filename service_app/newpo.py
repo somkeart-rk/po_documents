@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import include.db as db
-import include.sendmail as sent_mail
+import include.sentmail as sent_mail
 import time
 import pathlib
 import os.path 
@@ -63,7 +63,7 @@ def newpo():
                 #save data into database
                 #st.info(f"Job No# : {jobRunning} has been created.")
                 
-                sent_mail.sentEmailWithAtth(PoNo,Department ,PoDescription )
+                sent_mail.sentEmailWithAtth(loginName,PoNo,Department ,PoDescription )
                 
                 st.success("อัพโหลดและส่งเมล์เสร็จเรียบร้อย")
 
