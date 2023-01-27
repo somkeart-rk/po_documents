@@ -15,7 +15,7 @@ def sendEmail(mailType ):
     html = '''
         <html>
             <body>
-                <h1>Daily S&P 500 prices report</h1>
+                <h1>Daily production report</h1>
                 <p>Hello, welcome to your report!</p>
                 <a href="https://www.google.com">Login to read attachment file</a>
 
