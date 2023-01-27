@@ -7,7 +7,7 @@ import include.db as db
 import service_app.newpo as npo
 import service_app.showpo as spo
 import service_app.historypo as hpo
-import include.sendmail as sent_mail
+import include.sentmail as sent_mail
 import time
 import pathlib
 import os.path 
@@ -108,8 +108,8 @@ def side_menu():
         with st.form("Test"):
             SentMail = st.form_submit_button("Click to sent mail.")
             if SentMail:
-                #sent_mail.sendEmail("PO")
-                sent_mail.sentEmailWithAtth("PO6510-036","IT","test po")
+                sent_mail.sendEmail(st.session_state["userName"])
+                #sent_mail.sentEmailWithAtth("PO6510-036","IT","test po")
                 st.info("Sent success.")
 
             in_dir = st.text_input("Directory :",value="/app/poDocuments/data/PO123")
