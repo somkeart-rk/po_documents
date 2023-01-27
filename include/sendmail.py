@@ -58,7 +58,8 @@ def sentEmailWithAtth(po_number,department,mail_details):
         <html>
             <body>
                 <p>เรียน คุณอลิศรา </p>
-                <p>    {department} มีการขอซื้อสินค้าและฝ่ายจัดซื้อได้มีการขอราคาจากผู้ขาย จึงได้ส่งเอกสารให้พิจารณาเพื่ออนุมัติและดำเนินการต่อ <p>
+                <p>    {department} มีความต้องการขอซื้อสินค้า ฝ่ายจัดซื้อได้แจ้งผู้ขายเพื่อให้ทำใบเสนอราคาสินค้า </p>
+                <p>และได้ส่งเอกสารให้พิจารณาเพื่ออนุมัติดำเนินการต่อ <p>
                 <p>หมายเหตุ {mail_details} </p>
                 <img src='cid:myimageid' width="700">
             </body>
@@ -90,9 +91,6 @@ def sentEmailWithAtth(po_number,department,mail_details):
     ##############################################################    
 
     # Set up the email addresses and password. Please replace below with your email address and password
-    #gmail
-    #email_from = 'somkeart@gmail.com'
-    #password = 'lpwuvtybjfshgzck'
     #zoho mail
     email_from = 'somkeart@thaisock.com'
     password = 'gk5Wb3PjTFh4'
@@ -104,8 +102,8 @@ def sentEmailWithAtth(po_number,department,mail_details):
         email_from = 'purchase_am@thaisock.com'
         password = 'GxSd4XBkvxeK'
 
-    #email_to = ['alisara@thaisock.com','purchase_manager@thaisock.com']
-    email_to = ['somkeart@thaisock.com','purchase_manager@thaisock.com']
+    email_to = ['alisara@thaisock.com','purchase_manager@thaisock.com']
+    #email_to = ['somkeart@thaisock.com','purchase_manager@thaisock.com']
 
     # Generate today's date to be included in the email Subject
     date_str = pd.Timestamp.today().strftime('%Y-%m-%d')
