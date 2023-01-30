@@ -7,9 +7,7 @@ def convert_to_excel(df):
     output = BytesIO()
     writer = pd.ExcelWriter(output, engine="xlsxwriter")
     df.to_excel(writer, sheet_name="export data")
-
-    writer.save()
-    
+    writer.close()
     return output.getvalue()
 
 @st.experimental_memo
